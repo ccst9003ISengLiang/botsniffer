@@ -1,0 +1,24 @@
+n = int(input("n = "))
+w = int(input("w = "))
+h = input("h = ")
+height = list(map(int,h.replace(",","").split()))
+maxheight = max(height)
+if n>=1 and n<=15:
+    buildingsnumber=n
+if w>=1 and w<=6:
+    buildingswidth = w
+lengthH=len(height)
+totalheight = int(max(height))
+totalwidth = w*n+(n-1)
+for x in range(maxheight,0,-1):
+    for y in range(len(height)):
+        bnumber = height[y]
+        if bnumber>=x:
+            print("#"*w, end="")
+        else:
+            print("~"*w, end="")
+        if y<n-1:
+            print("~",end="")
+    print()
+    
+
